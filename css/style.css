@@ -93,7 +93,7 @@ nav a:hover {
   .nav-links {
   position: fixed;
   top: 0;
-  left: -250px;   /* HIDE off-screen left */
+  left: 0px;   /* HIDE off-screen left */
   height: 100%;
   width: 250px;
   background: #0f1c3f;
