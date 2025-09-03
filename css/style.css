@@ -81,6 +81,38 @@ nav a:hover {
   cursor: pointer;
 }
 
+/* Hamburger base */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Animate to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
   .nav-links {
@@ -90,19 +122,20 @@ nav a:hover {
     background: #fff;
     flex-direction: column;
     width: 200px;
-    display: none; /* hidden by default */
+    display: none;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
   .nav-links.show {
-    display: flex; /* show when active */
+    display: flex;
   }
 
   .hamburger {
-    display: block; /* visible on mobile */
+    display: flex; /* show only on mobile */
   }
 }
+
 
   /* Dropdown styles */
   .dropdown {

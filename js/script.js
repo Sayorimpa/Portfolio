@@ -78,6 +78,8 @@ document.querySelectorAll('.card').forEach(card => {
   }
 });
 
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("show");
+function toggleMenu(x) {
+  x.classList.toggle("active"); // animate hamburger
+  document.getElementById("navLinks").classList.toggle("show"); // show menu
 }
+
