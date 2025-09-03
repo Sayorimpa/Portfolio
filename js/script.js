@@ -78,8 +78,18 @@ document.querySelectorAll('.card').forEach(card => {
   }
 });
 
-function toggleMenu(x) {
-      x.classList.toggle("active");
-      document.getElementById("navLinks").classList.toggle("show");
-    }
+
+function toggleMenu(el) {
+  el.classList.toggle("active");
+  document.querySelector(".nav-links").classList.toggle("show");
+  document.querySelector(".overlay").style.display =
+    document.querySelector(".nav-links").classList.contains("show") ? "block" : "none";
+}
+
+function closeMenu() {
+  document.querySelector(".nav-links").classList.remove("show");
+  document.querySelector(".hamburger").classList.remove("active");
+  document.querySelector(".overlay").style.display = "none";
+}
+
 
