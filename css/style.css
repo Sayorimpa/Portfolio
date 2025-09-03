@@ -91,23 +91,23 @@ nav a:hover {
 /* Mobile nav */
 @media (max-width: 768px) {
   .nav-links {
-    position: fixed;
-    top: 0;
-    right: -250px; /* hidden */
-    height: 100%;
-    width: 250px;
-    background: #0f1c3f;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 20px;
-    transition: right 0.3s ease-in-out;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
+  position: fixed;
+  top: 0;
+  left: -250px;   /* HIDE off-screen left */
+  height: 100%;
+  width: 250px;
+  background: #0f1c3f;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 20px;
+  transition: left 0.3s ease-in-out; /* animate from left */
+  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.nav-links.show {
+  left: 0; /* slide IN */
+}
 
-  .nav-links.show {
-    right: 0; /* slide in */
-  }
 
   .hamburger {
     display: flex;
