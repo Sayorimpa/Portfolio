@@ -79,7 +79,7 @@ document.querySelectorAll('.card').forEach(card => {
 });
 
 function toggleMenu(x) {
-  x.classList.toggle("active"); // animate hamburger
-  document.getElementById("navLinks").classList.toggle("show"); // show menu
-}
+      x.classList.toggle("active");
+      document.getElementById("navLinks").classList.toggle("show");
+    }
 

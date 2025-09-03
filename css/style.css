@@ -83,22 +83,22 @@ nav a:hover {
 
 /* Hamburger base */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 25px;
-  height: 20px;
-  cursor: pointer;
-}
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 1100; /* stays above menu */
+    }
 
 .hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #333;
-  border-radius: 2px;
-  transition: 0.4s;
-}
+      display: block;
+      height: 3px;
+      background: #333;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
 
 /* Animate to X */
 .hamburger.active span:nth-child(1) {
@@ -115,25 +115,27 @@ nav a:hover {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    width: 200px;
-    display: none;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -250px; /* hidden initially */
+        height: 100%;
+        width: 250px;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+      }
 
   .nav-links.show {
-    display: flex;
-  }
+        right: 0; /* slide in */
+      }
 
-  .hamburger {
-    display: flex; /* show only on mobile */
-  }
+      .hamburger {
+        display: flex;
+      }
 }
 
 
