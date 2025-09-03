@@ -74,7 +74,35 @@ nav a:hover {
     color: #fdfd04;
   }
  
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    width: 200px;
+    display: none; /* hidden by default */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.show {
+    display: flex; /* show when active */
+  }
+
+  .hamburger {
+    display: block; /* visible on mobile */
+  }
+}
 
   /* Dropdown styles */
   .dropdown {
