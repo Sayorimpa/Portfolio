@@ -108,7 +108,15 @@ nav a:hover {
   left: 0; /* slide IN */
 }
 
-
+/* Style for Welcome text */
+.welcome-text {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
   .hamburger {
     display: flex;
     flex-direction: column;
