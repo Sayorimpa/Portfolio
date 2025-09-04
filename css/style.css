@@ -119,7 +119,7 @@ nav a:hover {
     padding: 50px 20px 20px; /* extra padding top so items sit below logo */
     transition: left 0.4s ease; /* smooth slide */
     box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-    
+    margin-top: 0;
   }
 .nav-links.show {
     left: 0; /* slide in fully */
@@ -182,20 +182,7 @@ nav a:hover {
 
 /* Mobile */
 @media (max-width: 768px) {
-  nav ul {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    height: fit-content;
-    width: 250px;
-    background: #0f1c3f;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 20px;
-    transition: right 0.3s ease-in-out;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
+  
   nav ul.show {
     right: 0;
   }
