@@ -16,15 +16,26 @@
 
 
   <nav>
+    <div class="nav-left">
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Logo + text -->
     <div class="logo">
-  <img src="images/logo.png" alt="Sayantani Sen Logo">
-  <span class="logo-text">Sayantani Sen</span>
-</div>
+      <img src="images/logo.png" alt="Sayantani Sen Logo">
+      <span class="logo-text">Sayantani Sen</span>
+    </div>
+  </div>
     <ul class="nav-links">
+      <li class="welcome-text">Welcome</li> <!-- 👈 Add this -->
       <li><a href="index.html"><b>Home</b></a></li>
        <!-- Work Dropdown -->
     <li class="dropdown">
-      <a href="#" class="dropbtn active"><b>Work ▾</b></a>
+      <a href="#" class="dropbtn active"><b>Work</b> <span class="arrow">▾</span></a>
       <ul class="dropdown-content">
         <li><a href="#" class="active"><b>UI / UX Design</b><small>Case studies & flows</small></a></li>
         <li><a href="visual.html"><b>Visual Design</b><small>Branding, posters, social</small></a></li>
