@@ -13,24 +13,28 @@
 <body>
   <!-- Navbar -->
   <nav>
-    <div class="logo">
-  <img src="images/logo.png" alt="Sayantani Sen Logo">
-  <span class="logo-text">Sayantani Sen</span>
-</div>
+    <div class="nav-left">
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-<!-- Hamburger button -->
-<div class="hamburger" onclick="toggleMenu(this)">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+    <!-- Logo + text -->
+    <div class="logo">
+      <img src="images/logo.png" alt="Sayantani Sen Logo">
+      <span class="logo-text">Sayantani Sen</span>
+    </div>
+  </div>
 
 
     <ul class="nav-links">
+      <li class="welcome-text">Welcome</li> <!-- 👈 Add this -->
       <li><a href="index.html"><b>Home</b></a></li>
        <!-- Work Dropdown -->
     <li class="dropdown">
-      <a href="#" class="dropbtn"><b>Work ▾</b></a>
+      <a href="#" class="dropbtn"><b>Work</b> <span class="arrow">▾</span></a>
       <ul class="dropdown-content">
         <li><a href="uiux.html"><b>UI / UX Design</b><small>Case studies & flows</small></a></li>
         <li><a href="visual.html"><b>Visual Design</b><small>Branding, posters, social</small></a></li>
@@ -44,7 +48,7 @@
 
 <!-- Overlay -->
 <div class="overlay" onclick="closeMenu()"></div>
-<div class="welcone-text">Welcome</div>
+
 
 <!-- About Section -->
   <section class="about-section reveal-on-scroll" id="about">

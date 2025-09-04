@@ -93,3 +93,34 @@ function closeMenu() {
 }
 
 
+// Mobile dropdown toggle
+document.querySelectorAll(".dropdown > a").forEach(dropdownToggle => {
+  dropdownToggle.addEventListener("click", function(e) {
+    if (window.innerWidth <= 768) { // only mobile
+      e.preventDefault();
+      let submenu = this.nextElementSibling;
+
+      // Close other open dropdowns first
+      document.querySelectorAll(".dropdown-content.show").forEach(openMenu => {
+        if (openMenu !== submenu) openMenu.classList.remove("show");
+      });
+
+      // Toggle current submenu
+      submenu.classList.toggle("show");
+    }
+  });
+});
+
+// Close dropdown when clicking outside
+document.addEventListener("click", function(e) {
+  if (window.innerWidth <= 768) {
+    if (!e.target.closest(".dropdown")) {
+      document.querySelectorAll(".dropdown-content.show").forEach(openMenu => {
+        openMenu.classList.remove("show");
+      });
+    }
+  }
+});
+
+
+

@@ -18,38 +18,45 @@ html {
       color: #0f172a;
     }
 
-/* Navbar */
+/* Navbar base */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 8%;
+  justify-content: space-between; /* 👈 logo left, hamburger right */
+  align-items: center;            /* 👈 keep items vertically centered */
+  padding: 1em 8%;
   background: linear-gradient(135deg, #0f1c3f, #583b5d 80%);
   color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000; /* keeps it above other content */
+  z-index: 1000;
+}
+
+/* Group (hamburger + logo) */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Logo + text inline */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
 }
 
 nav .logo img {
-  height: 50px;  /* adjust as needed */
+  height: 45px;
   width: auto;
 }
 
-.logo {
-  display: flex;
-  align-items: center; /* vertically center logo and text */
-  gap: 10px; /* space between logo and name */
-}
-
 .logo-text {
-  font-size: 1.4rem;   /* adjust size */
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #e2c72c;  
-  margin-left: 20px;    /* golden yellow */
+  color: #e2c72c;
 }
 
 
@@ -73,6 +80,13 @@ nav a:hover {
   .nav-links a.active {
     color: #fdfd04;
   }
+
+  /* Desktop hover dropdown (keep) */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
  
 /* Base nav styling already fine (keeping your code) */
 
@@ -88,43 +102,48 @@ nav a:hover {
   z-index: 900;
 }
 
+.hamburger {
+  display: none; /* hidden on desktop */
+}
 /* Mobile nav */
 @media (max-width: 768px) {
   .nav-links {
-  position: fixed;
-  top: 0;
-  
-  height: 100%;
-  width: 250px;
-  background: #0f1c3f;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 80px 20px;
-  transition: left 0.3s ease-in-out; /* animate from left */
-  box-shadow: 2px 0 8px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
+    position: fixed;
+    top: 0;
+    left: -250px; /* start hidden off-screen */
+    height: 100%; /* full height */
+    width: 250px;
+    background: #0f1c3f;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 20px 20px; /* extra padding top so items sit below logo */
+    transition: left 0.4s ease; /* smooth slide */
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+    
+  }
 .nav-links.show {
-  left: 0; /* slide IN */
-}
+    left: 0; /* slide in fully */
+  }
 
-/* Style for Welcome text */
-.welcome-text {
-  color: #fff;
-  font-size: 22px;
-  font-weight: bold;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+/* Welcome text */
+  .welcome-text {
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 0 0 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    width: 100%;
+  }
+  /* Hamburger button */
   .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
+    width: 28px;
     height: 20px;
     cursor: pointer;
-    z-index: 1100; /* stays above */
+    z-index: 1100; /* always above menu */
   }
 
   .hamburger span {
@@ -135,7 +154,7 @@ nav a:hover {
     transition: 0.3s;
   }
 
-  /* Animate hamburger → X */
+   /* Animate hamburger → X */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -147,6 +166,19 @@ nav a:hover {
   }
 }
 
+/* Hide welcome text on desktop */
+@media (min-width: 769px) {
+  .welcome-text {
+    display: none;
+  }
+}
+
+/* Show welcome text only on mobile */
+@media (max-width: 768px) {
+  .welcome-text {
+    display: block;
+  }
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -154,12 +186,12 @@ nav a:hover {
     position: fixed;
     top: 0;
     right: -250px;
-    height: 100%;
+    height: fit-content;
     width: 250px;
     background: #0f1c3f;
     flex-direction: column;
     align-items: flex-start;
-    padding: 80px 20px;
+    padding: 0 20px;
     transition: right 0.3s ease-in-out;
     box-shadow: -2px 0 8px rgba(0,0,0,0.3);
     z-index: 1000;
@@ -212,6 +244,43 @@ nav a:hover {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+@media (max-width: 768px) {
+  /* Reset hover move effect */
+  .dropdown > a {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .dropdown {
+    position: relative;
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static; /* sit over nav, not push it */
+    top: 100%; /* directly under Work */
+    left: 0;
+    background: #1a1a3d;
+    width: 100%;
+    border-radius: 0;
+    display: none; /* hidden initially */
+    z-index: 6000; /* stays above About */
+  }
+
+  .dropdown-content.show {
+    display: block; /* show on click */
+  }
+
+  .dropdown-content a {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 14px;
+  }
+}
+
+
+
 
 /* Hero */
 
