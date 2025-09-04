@@ -58,6 +58,7 @@ nav .logo img {
   nav .logo img {
     height: 35px; /* 👈 medium size */
   }
+
 }
 
 .logo-text {
@@ -577,6 +578,27 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* Mobile (two columns with spacing) */
+@media (max-width: 768px) {
+  .footer-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* 2 columns */
+    gap: 12px 100px; /* row gap = 12px, column gap = 70px */
+    justify-content: center; /* keep grid centered */
+    
+  }
+
+  .footer-nav ul li {
+    margin: 0;
+    padding-right: 40px;
+  }
+.footer-container {
+  
+  align-items: center;
+  
+}
+}
+
 /* Social icons */
 .social-icons a {
   margin-right: 30px;
@@ -930,6 +952,19 @@ border: 2px solid #0f1c3f;;
   font-weight: bold;
 }
 
+/* Mobile (2-column layout) */
+@media (max-width: 768px) {
+  .contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 👈 2 equal columns */
+    gap: 15px 20px; 
+    max-width: 400px;
+    margin: 0 auto; /* center align */
+  }
+  .contact-section p {
+  padding: 0 30px;
+}
+}
 
 /* Main Page Layout */
 main {
