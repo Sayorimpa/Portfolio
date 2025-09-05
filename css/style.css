@@ -289,10 +289,11 @@ nav a:hover {
 }
 
 /* Hero Image */
-.hero-img img {
+.hero-img-desktop img {
   max-width: 1520px;   /* controlled size, avoids overflow */
- padding-top: 90px;
+ padding-top: 75px;
   border-radius: 8px;
+  display: block;
 }
 
 /* Buttons wrapper */
@@ -332,7 +333,9 @@ nav a:hover {
   border: 0px;
   color: #fff;
 }
-
+.hero-img-mobile {
+  display: none;
+}
 
 /* Mobile hero adjustments */
 @media (max-width: 768px) {
@@ -341,10 +344,18 @@ nav a:hover {
   }
 
   /* Hero image */
-  .hero-img img {
+.hero-img-desktop {
+    display: none; /* hide desktop version */
+  }
+.hero-img-mobile {
+    display: block; /* show mobile version */
+    text-align: center;
+  }
+  .hero-img-mobile img {
     max-width: 100%;   /* scale properly */
-    height: auto;      /* prevent it from being too tall */
-    padding-top: 40px; /* less top padding */
+    height: auto;     /* keep aspect ratio */
+    margin: 0 auto;   /* center align */
+    padding-top: 40px;
   }
 }
 
@@ -361,9 +372,9 @@ nav a:hover {
   /* Smaller buttons */
   .btn,
   .btn-outline {
-    padding: 0.45em 1.2em;  /* smaller padding */
-    font-size: 0.8rem;      /* smaller text */
-    border-radius: 18px;    /* slightly round */
+    padding: 14px 7.4em;  /* smaller padding */
+    font-size: 0.9rem;      /* smaller text */
+    border-radius: 26px;    /* slightly round */
   }
 }
 
