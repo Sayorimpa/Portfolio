@@ -336,8 +336,7 @@ nav a:hover {
 
 /* Mobile hero adjustments */
 @media (max-width: 768px) {
-  .hero {
-    
+  .hero{
     text-align: center;
   }
 
@@ -347,24 +346,27 @@ nav a:hover {
     height: auto;      /* prevent it from being too tall */
     padding-top: 40px; /* less top padding */
   }
+}
 
-  /* Buttons wrapper */
+  /* Mobile hero adjustments */
+@media (max-width: 768px) {
   .hero-buttons {
-    flex-direction: row; /* keep side by side */
-    gap: 20px;           /* less gap */
-    margin-top: 30px;    /* keep below the image */
-    margin-bottom: 60px;
+    flex-direction: row;
+    gap: 15px;           /* smaller gap */
+    margin-top: 25px;
+    margin-bottom: 50px;
     justify-content: center;
   }
 
-  /* Buttons smaller */
+  /* Smaller buttons */
   .btn,
   .btn-outline {
-    padding: 0.6em 1.8em;
-    font-size: 0.9rem;
-    border-radius: 20px;
+    padding: 0.45em 1.2em;  /* smaller padding */
+    font-size: 0.8rem;      /* smaller text */
+    border-radius: 18px;    /* slightly round */
   }
 }
+
 
 
 
@@ -614,22 +616,22 @@ nav a:hover {
 
 /* Mobile (two columns with spacing) */
 @media (max-width: 768px) {
-  .footer-nav ul {
-    display: grid;
-    grid-template-columns: repeat(2, auto); /* 2 columns */
-    gap: 12px 100px; /* row gap = 12px, column gap = 70px */
-    justify-content: center; /* keep grid centered */
-    
-  }
+.footer-nav ul {
+display: grid;
+grid-template-columns: repeat(2, auto); /* 2 columns */
+gap: 12px 100px; /* row gap = 12px, column gap = 70px */
+justify-content: center; /* keep grid centered */
 
-  .footer-nav ul li {
-    margin: 0;
-    padding-right: 40px;
-  }
+}
+
+.footer-nav ul li {
+margin: 0;
+padding-right: 40px;
+}
 .footer-container {
-  
-  align-items: center;
-  
+
+align-items: center;
+
 }
 }
 
@@ -655,7 +657,9 @@ nav a:hover {
   opacity: 0.7;
   margin-top: 20px;
 }
-
+.social-icons h4{
+  margin-top: 15px;
+}
 
 .thank-you {
   text-align: center;
