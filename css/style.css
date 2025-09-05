@@ -924,11 +924,20 @@ border: 2px solid #0f1c3f;;
   
 }
 
+/* ✅ Mobile version */
+@media (max-width: 768px) {
+  .about-section::before {
+    top: 340px;         /* adjust placement */
+    left: 80px;        /* keep inside screen */
+    width: 90%;        /* responsive width */
+    height: 750px;     /* smaller for mobile */
+  }
+}
 .about-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* responsive */
+  
   gap: 50px;
 }
 
@@ -974,6 +983,14 @@ border: 2px solid #0f1c3f;;
   margin-bottom: 25px;
   color: #313131;
 }
+/* ✅ Mobile version */
+@media (max-width: 768px) {
+  .about-text p {
+    font-size: 0.95rem !important;  /* smaller font */
+    line-height: 1.6 !important;    /* slightly tighter spacing */
+    color: #565656 !important;
+  }
+}
 
 .about-text h2 {
   font-size: 1.6rem;
@@ -1001,6 +1018,36 @@ border: 2px solid #0f1c3f;;
   color: #24011e; /* highlight color */
   font-weight: bold;
 }
+/* Default desktop style (keep bullets on big screens) */
+.skills ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* ✅ Mobile version */
+@media (max-width: 768px) {
+  .about-text ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .about-text ul li {
+    padding: 8px 14px;
+    background: #f4f4f4;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    position: static; /* disable bullet positioning */
+  }
+
+  .about-text ul li::before {
+    content: none; /* ❌ remove bullets on mobile */
+  }
+}
 
 /* Contact Section */
 .contact-section {
@@ -1020,6 +1067,14 @@ border: 2px solid #0f1c3f;;
   margin-bottom: 15px;
   
   color: #583b5d;
+}
+
+/* ✅ Mobile version */
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: 1.7rem;   /* smaller heading on mobile */
+    margin-bottom: 12px; /* optional: adjust spacing */
+  }
 }
 
 .contact-section p {
@@ -1079,6 +1134,9 @@ border: 2px solid #0f1c3f;;
   padding: 0 30px;
 }
 }
+
+
+
 
 /* Main Page Layout */
 main {
@@ -1355,11 +1413,7 @@ z-index: 1000;
     margin: 1em 0 0;
   }
 
-  /* Skills */
-  .skills-row {
-    flex-wrap: wrap;
-    gap: 15px;
-  }
+  
 
   /* About Section */
   .about-container {
