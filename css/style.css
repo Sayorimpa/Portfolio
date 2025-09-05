@@ -334,6 +334,40 @@ nav a:hover {
 }
 
 
+/* Mobile hero adjustments */
+@media (max-width: 768px) {
+  .hero {
+    
+    text-align: center;
+  }
+
+  /* Hero image */
+  .hero-img img {
+    max-width: 100%;   /* scale properly */
+    height: auto;      /* prevent it from being too tall */
+    padding-top: 40px; /* less top padding */
+  }
+
+  /* Buttons wrapper */
+  .hero-buttons {
+    flex-direction: row; /* keep side by side */
+    gap: 20px;           /* less gap */
+    margin-top: 30px;    /* keep below the image */
+    margin-bottom: 60px;
+    justify-content: center;
+  }
+
+  /* Buttons smaller */
+  .btn,
+  .btn-outline {
+    padding: 0.6em 1.8em;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+}
+
+
+
 
     .container {
       display: flex;
