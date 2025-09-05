@@ -377,12 +377,7 @@ nav a:hover {
     border-radius: 26px;    /* slightly round */
   }
 }
-
-
-
-
-
-    .container {
+ .container {
       display: flex;
       gap: 70px;
       flex-wrap: wrap;
@@ -439,6 +434,32 @@ nav a:hover {
       font-size: 14px;
       color: #555;
     }
+
+    /* Mobile layout: stack vertically */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: row;   /* stack all cards */
+    align-items: center;      /* center align */
+    gap: 20px;                /* reduce gap */
+  }
+
+  .service-card {
+    display: flex;
+  flex-direction: column;   /* stack icon, h3, p vertically */
+  align-items: center;      /* center horizontally */
+  text-align: center;       /* center text */
+  gap: 8px;                 /* spacing between elements */
+  
+  }
+.service-text h3{
+  margin-bottom: 20px;
+}
+ .brand{
+  margin-bottom: 22px;
+  margin-top: 5px;
+}
+
+}
 
     /* Right side */
     .help-text {
@@ -573,6 +594,50 @@ nav a:hover {
   height: 100%;
 }
 
+/* Default: desktop */
+.card-info {
+  display: none; /* hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    position: static !important;
+    background: none !important;
+    opacity: 1 !important;
+    height: auto !important;
+    padding: 15px !important;
+    transition: none !important;
+    text-align: center !important;
+    z-index: 1 !important;
+  }
+
+  .overlay h3,
+  .overlay p {
+    color: #333 !important;
+    opacity: 1 !important;
+    text-align: center !important;
+  }
+
+  .work-card {
+    width: 100%;              /* take full width on mobile */
+    max-width: 360px;         /* prevent being too wide */
+    min-height: 430px;        /* 👈 force taller cards */
+    margin: 0 auto 20px;      /* space between cards */
+    border-radius: 12px;
+  }
+
+  .work-card img {
+    width: 100%;
+    height: 320px;            /* 👈 fixed image height */
+    object-fit: cover;
+    display: block;
+  }
+
+  /* disable hover effects on mobile */
+  .work-card:hover img {
+    transform: none !important;
+  }
+}
 
 
 
@@ -1238,6 +1303,7 @@ z-index: 1000;
     flex-direction: column;
     gap: 30px;
     margin-top: 0;
+    
   }
 
   .services {
@@ -1248,35 +1314,28 @@ z-index: 1000;
   .service-card {
     padding: 15px 20px;
   }
+.help-text{
+  text-align: center;
+  padding: 0 20px;
+}
 
   .help-text h2 {
     font-size: 26px;
   }
 
   /* Stats */
-  .stats {
-    flex-direction: column;
-    gap: 15px;
-    align-items: flex-start;
-  }
+ 
 
   .stat h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   /* My Work Cards */
-  .work-cards {
-    gap: 20px;
-  }
+/* Mobile adjustments */
 
-  .work-card {
-    width: 100%;
-    height: auto;
-  }
 
-  .overlay {
-    padding: 15px;
-  }
+
+
 
   /* Projects */
   .project {
