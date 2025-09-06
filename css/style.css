@@ -1675,3 +1675,16 @@ z-index: 1000;
     margin-bottom: 15px; 
   }
 }
+
+.text-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .text-desktop {
+    display: none;
+  }
+  .text-mobile {
+    display: inline;
+  }
+}
