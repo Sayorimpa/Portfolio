@@ -10,7 +10,7 @@ if (reveals.length > 0) {
         entry.target.classList.remove("active");
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0 });
 
   reveals.forEach(reveal => observer.observe(reveal));
 }

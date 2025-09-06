@@ -1462,6 +1462,105 @@ z-index: 1000;
   }
 }
 
+/* 📱 Mobile Adjustments */
+@media (max-width: 768px) {
+
+  main {
+    margin-top: 80px;
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  main h1 {
+    font-size: 24px;
+  }
+
+  main p {
+    font-size: 0.95rem;
+  }
+
+  section h2 {
+    font-size: 1.6rem;
+  }
+
+  section h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Gallery */
+  .gallery {
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+  }
+
+  .card {
+    width: 100%; /* full width */
+    max-width: 330px;
+    padding: 15px;
+  }
+
+  .card img {
+    height: auto; /* let image resize naturally */
+    max-height: 200px;
+  }
+
+  .card h4 {
+    font-size: 1rem;
+    margin: 6px 0;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  /* Hover → Tap adjustments */
+  .card:hover {
+    transform: none; /* disable floating hover effect */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  /* Zoom buttons */
+  .zoom-btn {
+    top: 8px;
+    right: 8px;
+    font-size: 0.9rem;
+    padding: 6px 7px;
+  }
+
+  /* Reduce zoom scale for small screens */
+  .card.active img { transform: scale(1.8); }
+  .card.comic.active img { transform: scale(1.7); }
+  .card.restaurent.active img { transform: scale(2.8); }
+  .card.cakeshop.active img { transform: scale(2.4); }
+  .card.couple-cartton.active img { transform: scale(1.6); }
+  .card.man.active img { transform: scale(2.3); }
+  .card.magazine.active img { transform: scale(2.8); }
+  .card.cosmetics.active img { transform: scale(1.5); }
+  .card.digital.active img { transform: scale(1.5); }
+  .card.food.active img { transform: scale(1.6); }
+  .card.hospitality.active img { transform: scale(1.4); }
+  .card.tourism.active img { transform: scale(1.4); }
+  .card.beverage.active img { transform: scale(1.4); }
+  .card.camera.active img { transform: scale(1.3); }
+  .card.chips.active img { transform: scale(2.0); }
+  .card.chocolate.active img { transform: scale(1.6); }
+  .card.can.active img { transform: scale(2.2); }
+  .card.cocobar.active img { transform: scale(1.6); }
+  .card.biscuits.active img { transform: scale(1.6); }
+  .card.mother-tongue.active img { transform: scale(1.4); }
+  .card.diversity.active img { transform: scale(1.6); }
+  .card.kingfisher.active img { transform: scale(1.4); }
+  .card.chocolate-ad.active img { transform: scale(1.4); }
+  .card.wollen-banner.active img { transform: scale(1.4); }
+  .card.sunglass-ad.active img { transform: scale(1.4); }
+  .card.bengali-new-year.active img { transform: scale(1.4); }
+
+}
+
+
 @media (max-width: 480px) {
   /* Further tweaks for very small screens */
   nav {
