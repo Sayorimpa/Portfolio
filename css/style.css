@@ -1460,7 +1460,7 @@ z-index: 1000;
     font-size: 1.1rem;
   }
 
-  @media (max-width: 768px) {
+ 
   /* Paragraphs always visible */
   .card p {
     opacity: 1;
@@ -1488,7 +1488,7 @@ z-index: 1000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 }
-}
+
 
 
 @media (max-width: 480px) {
