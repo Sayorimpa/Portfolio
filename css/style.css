@@ -1491,39 +1491,7 @@ z-index: 1000;
 
 
 
-@media (max-width: 480px) {
-  /* Further tweaks for very small screens */
-  nav {
-    padding: 0.8em 4%;
-  }
 
-  .hero-buttons .btn,
-  .hero-buttons .btn-outline {
-    width: 100%;
-    text-align: center;
-  }
-
-  .help-text h2 {
-    font-size: 22px;
-  }
-
-  .work-card {
-    width: 95%;
-  }
-
-  .project {
-    padding: 1em;
-  }
-
-  .about-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .circle-frame {
-    width: 200px;
-    height: 200px;
-  }
-}
 
 @media (max-width: 768px) {
   .project {
