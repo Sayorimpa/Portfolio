@@ -45,12 +45,13 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px; /* space between logo and text */
+  gap: 20px; /* space between logo and text */
 }
 
 nav .logo img {
-  height: 45px;
+  height: 35px;
   width: auto;
+  margin-left: 10px;
 }
 
 /* Mobile version */
