@@ -477,7 +477,8 @@ nav a:hover {
       font-weight: 600;
     }
     .mywork{
-      padding: 0 30px;
+      padding-left: 20px ;
+      padding-right: 20px;
     }
 }
 
