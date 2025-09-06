@@ -476,10 +476,7 @@ nav a:hover {
       font-size: 16px;
       font-weight: 600;
     }
-    .mywork{
-      padding-left: 20px ;
-      padding-right: 20px;
-    }
+    
 }
 
     /* Right side */
@@ -655,6 +652,10 @@ nav a:hover {
     display: block;
     
     
+  }
+  .mywork{
+    padding-left: 20px;
+    padding-right:20px;
   }
 
   /* disable hover effects on mobile */
