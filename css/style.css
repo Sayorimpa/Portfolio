@@ -452,11 +452,13 @@ nav a:hover {
 
     /* Mobile layout: stack vertically */
 @media (max-width: 768px) {
-  
+  .container{
+    align-items: center;
+  }
   .services {
     flex-direction: row;   /* stack all cards */
     align-items: center;      /* center align */
-    gap: 10px;                /* reduce gap */
+    gap: 20px;     /* reduce gap */
   }
 
   .service-card {
@@ -468,6 +470,11 @@ nav a:hover {
 
 
   }
+  .service-text h3 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
 }
 
     /* Right side */
@@ -1392,7 +1399,9 @@ z-index: 1000;
   .stat h3 {
     font-size: 22px;
   }
-
+.stats {
+    gap: 20px;
+  }
   /* My Work Cards */
 /* Mobile adjustments */
 
