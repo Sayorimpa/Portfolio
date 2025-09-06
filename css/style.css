@@ -454,6 +454,7 @@ nav a:hover {
 @media (max-width: 768px) {
   .container{
     align-items: center;
+    
   }
   .services {
     flex-direction: row;   /* stack all cards */
@@ -474,6 +475,9 @@ nav a:hover {
       margin: 0;
       font-size: 16px;
       font-weight: 600;
+    }
+    .mywork{
+      padding: 0 30px;
     }
 }
 
