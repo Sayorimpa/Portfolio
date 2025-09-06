@@ -78,19 +78,34 @@ document.querySelectorAll('.card').forEach(card => {
   }
 });
 
-
+// navbar layout open and close//
 function toggleMenu(el) {
   el.classList.toggle("active");
   document.querySelector(".nav-links").classList.toggle("show");
-  document.querySelector(".overlay").style.display =
-    document.querySelector(".nav-links").classList.contains("show") ? "block" : "none";
+  
 }
 
 function closeMenu() {
   document.querySelector(".nav-links").classList.remove("show");
   document.querySelector(".hamburger").classList.remove("active");
-  document.querySelector(".overlay").style.display = "none";
+  
 }
+
+// detect outside click
+document.addEventListener("click", function (event) {
+  const nav = document.querySelector("nav");
+  const hamburger = document.querySelector(".hamburger");
+
+  // if menu is open AND clicked outside nav + not on hamburger
+  if (
+    document.querySelector(".nav-links").classList.contains("show") &&
+    !nav.contains(event.target) &&
+    !hamburger.contains(event.target)
+  ) {
+    closeMenu();
+  }
+});
+
 
 
 // Mobile dropdown toggle

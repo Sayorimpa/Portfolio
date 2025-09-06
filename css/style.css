@@ -108,6 +108,7 @@ nav a:hover {
   background: rgba(0,0,0,0.5);
   display: none;
   z-index: 900;
+  
 }
 
 .hamburger {
@@ -128,6 +129,8 @@ nav a:hover {
     transition: left 0.4s ease; /* smooth slide */
     box-shadow: 2px 0 8px rgba(0,0,0,0.3);
     margin-top: 0;
+    z-index: 1000; /* keep above overlay */
+    
   }
 .nav-links.show {
     left: 0; /* slide in fully */
@@ -197,9 +200,20 @@ nav a:hover {
   .hamburger {
     display: flex;
   }
+
+/* Navbar */
+  nav {
+    flex-direction: column;
+    padding: 1em 5%;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8em;
+    margin-top: 1em;
+  }
 }
-
-
 
   /* Dropdown styles */
   .dropdown {
@@ -780,14 +794,23 @@ align-items: center;
        /* The initial, hidden state of the animation */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(30px); /* smaller movement = quicker feel */
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out; /* faster */
 }
 
 .reveal-on-scroll.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mobile subtle (fade only) */
+@media (max-width: 768px) {
+  .reveal-on-scroll {
+    transform: none; /* no slide */
+    transition: opacity 0.3s ease; /* quick fade */
+  }
+}
+
 
 /* Delay classes */
 .delay-1 {
@@ -1326,23 +1349,9 @@ z-index: 1000;
 /* ===================== */
 @media (max-width: 768px) {
 
-  /* Navbar */
-  nav {
-    flex-direction: column;
-    padding: 1em 5%;
-    align-items: flex-start;
-  }
+  
 
-  nav ul {
-    flex-direction: column;
-    gap: 0.8em;
-    margin-top: 1em;
-  }
-
-  .logo-text {
-    font-size: 1.1rem;
-    margin-left: 5px;
-  }
+ 
 
   /* Hero */
   .hero-img img {
