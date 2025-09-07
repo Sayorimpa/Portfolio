@@ -460,7 +460,7 @@ nav a:hover {
   .services {
     flex-direction: row;   /* stack all cards */
     align-items: center;      /* center align */
-    gap: 20px;     /* reduce gap */
+    gap: 15px;     /* reduce gap */
   }
 
   .service-card {
@@ -1514,7 +1514,7 @@ z-index: 1000;
 @media (max-width: 768px) {
   .project {
     flex-direction: column !important; /* stack items */
-    text-align: center;
+    align-items: center;
     gap: 1.5em;
     padding: 20px;
     margin-left: 10px;
@@ -1526,6 +1526,7 @@ z-index: 1000;
     margin: 0 auto;     /* center image */
     height: auto;
     object-fit: cover;
+    
     
     
   }
