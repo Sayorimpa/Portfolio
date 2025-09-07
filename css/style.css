@@ -640,7 +640,7 @@ nav a:hover {
     width: 100%;              /* take full width on mobile */
     max-width: 360px;         /* prevent being too wide */
     min-height: 430px;        /* 👈 force taller cards */
-   
+  
     border-radius: 12px;
    
   }
