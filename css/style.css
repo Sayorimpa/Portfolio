@@ -732,13 +732,9 @@ padding-right: 40px;
 }
 .footer-container {
 
-align-items: center;
-
-}
-.site-footer {
-
-align-items: center;
-
+  align-items: center;
+  margin-left: 20px;
+  padding: 0;
 }
 }
 
