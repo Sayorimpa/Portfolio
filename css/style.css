@@ -306,7 +306,7 @@ nav a:hover {
 /* Hero Image */
 .hero-img-desktop img {
   max-width: 1520px;   /* controlled size, avoids overflow */
- padding-top: 75px;
+ padding-top: 60px;
   border-radius: 8px;
   display: block;
 }
