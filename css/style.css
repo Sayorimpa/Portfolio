@@ -1527,6 +1527,7 @@ z-index: 1000;
     margin: 0 auto;     /* center image */
     height: auto;
     object-fit: cover;
+    align-items: center;
     
     
     
@@ -1536,6 +1537,7 @@ z-index: 1000;
     width: 100%;
     text-align: left;  /* ✅ easier reading */
     padding: 30px;
+    align-items: center;
   }
 
   .project-content h2 {
