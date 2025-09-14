@@ -328,7 +328,7 @@ nav a:hover {
 
 /* Hero Image */
 .hero-img-desktop img {
-  max-width: 1520px;   /* controlled size, avoids overflow */
+  max-width: 1520px;   /* to avoids overflow */
  padding-top: 60px;
   border-radius: 8px;
   display: block;
@@ -392,8 +392,8 @@ nav a:hover {
   }
   .hero-img-mobile img {
     max-width: 100%;   /* scale properly */
-    height: auto;     /* keep aspect ratio */
-    margin: 0 auto;   /* center align */
+    height: auto;     
+    margin: 0 auto;   /* center aligned */
     padding-top: 40px;
   }
 }
@@ -402,7 +402,7 @@ nav a:hover {
 @media (max-width: 768px) {
   .hero-buttons {
     flex-direction: row;
-    gap: 15px;           /* smaller gap */
+    gap: 15px;           
     margin-top: 25px;
     margin-bottom: 50px;
     justify-content: center;
@@ -411,9 +411,9 @@ nav a:hover {
   /* Smaller buttons */
   .btn,
   .btn-outline {
-    padding: 14px 7.4em;  /* smaller padding */
-    font-size: 0.9rem;      /* smaller text */
-    border-radius: 26px;    /* slightly round */
+    padding: 14px 7.4em; 
+    font-size: 0.9rem;      
+    border-radius: 26px;    
   }
 }
  .container {
@@ -458,7 +458,7 @@ nav a:hover {
       font-weight: bold;
     }
 
-    .website { background: #0d9488; }   /* Teal */
+    .website { background: #0d9488; }   /* greenish blue */
     .mobile { background: #fbbf24; }    /* Yellow */
     .brand  { background: #f87171; }    /* Red */
 
@@ -481,7 +481,7 @@ nav a:hover {
     
   }
   .services {
-    flex-direction: row;   /* stack all cards */
+    flex-direction: row;   /*Stacked cards/*
     align-items: center;      /* center align */
     gap: 15px;     /* reduce gap */
   }
@@ -1380,29 +1380,12 @@ z-index: 1000;
   display: block;
 }
 
-/* double Clickable Zoom*/
-/* Default (desktop) – no zoom */
-.zoomable {
-  transition: transform 0.3s ease;
-  cursor: default;
-}
-
-/* Mobile only (max-width: 768px or adjust as needed) */
-@media (max-width: 768px) {
-  .zoomable {
-    cursor: zoom-in;
-  }
-  .zoomable.zoomed {
-    transform: scale(2);   /* zoom level */
-    cursor: zoom-out;
-  }
-}
 
 
 
-/* ===================== */
-/* 📱 Mobile Responsive  */
-/* ===================== */
+
+
+/* Mobile Responsive  */
 @media (max-width: 768px) {
 
   
@@ -1672,3 +1655,11 @@ z-index: 1000;
     display: inline;
   }
 }
+
+
+
+
+
+
+
+
