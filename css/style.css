@@ -40,6 +40,14 @@ nav {
   align-items: center;
   gap: 15px;
 }
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none; /* removes underline */
+  color: inherit;        /* text color stays consistent */
+}
+
 
 /* Logo + text inline */
 .logo {
@@ -52,6 +60,21 @@ nav .logo img {
   height: 35px;
   width: auto;
   margin-left: 10px;
+}
+
+/* Extra small screens (phones <480px) */
+@media (max-width: 480px) {
+  .logo-link {
+    gap: 10px; /* reduce spacing */
+  }
+
+  nav .logo img {
+    height: 25px;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
 }
 
 /* Mobile version */
@@ -1356,6 +1379,26 @@ z-index: 1000;
 .card.active:hover .zoom-out {
   display: block;
 }
+
+/* double Clickable Zoom*/
+/* Default (desktop) – no zoom */
+.zoomable {
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+/* Mobile only (max-width: 768px or adjust as needed) */
+@media (max-width: 768px) {
+  .zoomable {
+    cursor: zoom-in;
+  }
+  .zoomable.zoomed {
+    transform: scale(2);   /* zoom level */
+    cursor: zoom-out;
+  }
+}
+
+
 
 /* ===================== */
 /* 📱 Mobile Responsive  */

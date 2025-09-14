@@ -137,5 +137,22 @@ document.addEventListener("click", function(e) {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const img = document.querySelector(".zoomable");
+  let lastTap = 0;
+
+  img.addEventListener("touchend", function (e) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+
+    if (tapLength < 300 && tapLength > 0) {
+      // Double tap detected
+      img.classList.toggle("zoomed");
+      e.preventDefault();
+    }
+
+    lastTap = currentTime;
+  });
+});
 
 
