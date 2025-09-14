@@ -137,7 +137,96 @@ document.addEventListener("click", function(e) {
   }
 });
 
+//Zoom Picture//
 
+document.addEventListener("DOMContentLoaded", function () {
+  const zoomables = document.querySelectorAll(".zoomable");
+  let lastTap = 0;
+
+  function openOverlay(img) {
+    
+    const overlay = document.createElement("div");
+    overlay.classList.add("image-overlay");
+
+    // Scrollable container for image
+    const container = document.createElement("div");
+    container.classList.add("zoomed-container");
+
+    const zoomedImg = document.createElement("img");
+    zoomedImg.src = img.src;
+    zoomedImg.alt = img.alt;
+
+    container.appendChild(zoomedImg);
+    overlay.appendChild(container);
+    document.body.appendChild(overlay);
+    document.body.classList.add("no-scroll");
+    
+
+    let state = 0; // 0 = card size, 1 = full screen
+    let overlayLastTap = 0;
+
+    // Double-tap zoom in/out
+    overlay.addEventListener("touchend", function () {
+      const now = new Date().getTime();
+      if (now - overlayLastTap < 300) { // double-tap
+        if (state === 0) {
+          // Zoom to full screen
+          zoomedImg.style.width = "100%";
+          zoomedImg.style.height = "auto";
+          state = 1;
+        } else if (state === 1) {
+          // Back to card size
+          zoomedImg.style.width = "";
+          zoomedImg.style.height = "";
+          state = 0;
+          setTimeout(() => {
+            overlay.remove();
+            document.body.classList.remove("no-scroll");
+            
+          }, 200);
+        }
+      }
+      overlayLastTap = now;
+    });
+
+    // Optional: close overlay without zooming (tap outside image)
+    overlay.addEventListener("click", function(e) {
+      if (e.target !== zoomedImg) {
+        overlay.remove();
+        document.body.classList.remove("no-scroll");
+        
+      }
+    });
+
+    // Optional: add a close button
+    const closeBtn = document.createElement("span");
+    closeBtn.innerText = "×";
+    closeBtn.style.position = "absolute";
+    closeBtn.style.top = "20px";
+    closeBtn.style.right = "20px";
+    closeBtn.style.fontSize = "30px";
+    closeBtn.style.color = "#000000ff";
+    closeBtn.style.cursor = "pointer";
+    overlay.appendChild(closeBtn);
+
+    closeBtn.addEventListener("click", () => {
+      overlay.remove();
+      document.body.classList.remove("no-scroll");
+      
+    });
+  }
+
+  // Attach double-tap listener to all zoomable images
+  zoomables.forEach(img => {
+    img.addEventListener("touchend", function () {
+      const currentTime = new Date().getTime();
+      if (currentTime - lastTap < 300) {
+        openOverlay(img);
+      }
+      lastTap = currentTime;
+    });
+  });
+});
 
 
 
