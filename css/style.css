@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
 }
 
 html {
@@ -1718,37 +1717,3 @@ z-index: 1000;
     user-select: none;
   }
 }
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevents sideways scrolling */
-  background-color: #f9f9f9; /* Match your site background */
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Prevent fixed-width items from pushing layout on small screens */
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Center large sections and prevent left shift */
-section, footer {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Fix for GitHub Pages default body overflow issue */
-@media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden !important;
-  }
-}
-
